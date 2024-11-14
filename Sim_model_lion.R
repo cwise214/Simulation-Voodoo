@@ -393,8 +393,9 @@ for(id in unique_vids) {
                         strata(step_id_))
     
     # Print the summary of the fitted model
-    Mlist<-  summary(m_0)
-    
+   
+  M_sum<-  summary(m_0)
+  Mlist<-list(M_sum,Mlist)
     # Calculate the redistribution kernel
     k2 <- redistribution_kernel(m_0, map = env.all, start = start, 
                                 landscape = "continuous", tolerance.outside = .75,
